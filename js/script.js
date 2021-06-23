@@ -193,11 +193,12 @@ const DOM = {
 
 const Utils = {
     formatAmount(value){
-        // value = Number(value.replace(/\,\./g, "")) * 100
+        // value = Number(value.replace(/\,?\.?/g, "")) * 100
         //Aqui utilizamos um REGEX para retirar a virgula, mas como o JS já retira, ao mudarmos o valor, não precisa, mas se precisar faça isso.
 
         value = Number(value) * 100 
-        return value
+        console.log(value)
+        return Math.round(value)
     },
     formatDate(value){
         const spliceDate = value.split("-")
